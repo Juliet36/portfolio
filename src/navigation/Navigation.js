@@ -1,9 +1,9 @@
+import './Navigation.css'
 import {
   NavLink
 } from 'react-router-dom'
-import './Navigation.css'
+import { motion } from 'framer-motion'
 import Content from './Content'
-import { motion, AnimatePresence } from 'framer-motion'
 
 function Navigation(props) {
   console.log(props)
@@ -26,5 +26,3 @@ function Navigation(props) {
 }
 
 export default Navigation
-
-//<Content transition={props.show} show={props.current === props.position} type={props.location} />

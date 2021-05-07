@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion'
 import './Content.css'
 import './Experience.css'
-import cat from './images/me+cat.png'
-import { ReactComponent as CatText } from './images/cat-text.svg'
-import PageTitle from './PageTitle'
-import ButtonLink from './ButtonLink'
-import TechCollection from './TechCollection'
+import { motion } from 'framer-motion'
+import { ReactComponent as CatText } from '../images/cat-text.svg'
+import cat from '../images/me+cat.png'
+import PageTitle from '../components/PageTitle'
+import ButtonLink from '../components/ButtonLink'
+import TechCollection from '../components/TechCollection'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 10},

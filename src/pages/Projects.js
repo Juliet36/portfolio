@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion'
 import './Content.css'
-import { PROJECTS } from './constants.js'
-import ProjectSection from './ProjectSection.js'
-import PageTitle from './PageTitle'
+import { motion } from 'framer-motion'
+import { PROJECTS } from '../constants/projects.js'
+import ProjectSection from '../components/ProjectSection.js'
+import PageTitle from '../components/PageTitle'
 
 const SECTION_NAMES = Object.keys(PROJECTS)
 const fadeUp = {

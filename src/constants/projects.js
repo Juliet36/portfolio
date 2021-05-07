@@ -11,19 +11,6 @@ import pillcastDemo from './images/projects/pillcast-demo.png'
 import moodtube from './images/projects/moodtube.png'
 import youtubeScrape from './images/projects/youtube-scrape.png'
 import pillcastSmart from './images/projects/pillcast-smart.png'
-
-import reactIcon from './images/icons/react.png'
-import javascriptIcon from './images/icons/js.png'
-import htmlIcon from './images/icons/html.png'
-import cssIcon from './images/icons/css.png'
-import jQueryIcon from './images/icons/jquery.png'
-import nodeIcon from './images/icons/node.png'
-import pythonIcon from './images/icons/python.png'
-import firebaseIcon from './images/icons/firebase.png'
-import terminalIcon from './images/icons/terminal.png'
-import figmaIcon from './images/icons/figma.png'
-import sketchIcon from './images/icons/sketch.png'
-import githubIcon from './images/icons/github.png'
  
 export const PROJECTS = {
   "Web Apps": [
@@ -123,63 +110,6 @@ export const PROJECTS = {
       "description": "Built the Google Assistant App for our Pillcast audio player. Also created scripts to stitch hundreds of audios together with intros and interstitial sounds and used ffmpeg to reformat them to match Google and Alexa requirements",
       "tech": ["JavaScript", "ffmpeg", "Python"],
       "links": ["https://assistant.google.com/services/a/uid/00000090949b1f75?hl=en-US"]
-    }
-  ]
-}
-
-export const TECHS = {
-  "Back-End": [
-    {
-      name: "NodeJS",
-      icon: nodeIcon
-    },
-    {
-      name: "Python",
-      icon: pythonIcon
-    }
-  ],
-  "Front-End": [
-    {
-      name: "CSS",
-      icon: cssIcon
-    },
-    {
-      name: "HTML",
-      icon: htmlIcon
-    },
-    {
-      name: "JavaScript",
-      icon: javascriptIcon
-    },
-    {
-      name: "JQuery",
-      icon: jQueryIcon
-    },
-    {
-      name: "React",
-      icon: reactIcon
-    }
-  ],
-  "Misc": [
-    {
-      name: "Command Line",
-      icon: terminalIcon
-    },
-    {
-      name: "Figma",
-      icon: figmaIcon
-    },
-    {
-      name: "Firebase",
-      icon: firebaseIcon
-    },
-    {
-      name: "Github",
-      icon: githubIcon
-    },
-    {
-      name: "Sketch",
-      icon: sketchIcon
     }
   ]
 }

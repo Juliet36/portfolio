@@ -1,5 +1,5 @@
-import TechElement from './TechElement.js'
 import './TechSection.css'
+import TechElement from './TechElement.js'
 
 export default function TechSection(props) {
   return (

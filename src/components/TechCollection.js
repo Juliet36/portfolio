@@ -1,6 +1,6 @@
-import { TECHS } from './constants.js'
-import TechSection from './TechSection.js'
 import './TechCollection.css'
+import { TECHS } from '../constants/technologies.js'
+import TechSection from './TechSection.js'
 
 const TECH_SECTION_NAMES = Object.keys(TECHS)
 

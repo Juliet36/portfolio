@@ -2,7 +2,6 @@ import './ButtonLink.css'
 
 export default function ButtonLink(props) {
   const { text, link } = {...props}
-  console.log(props.handleClick ? 'yes' : 'no')
   return (
     <>
     {

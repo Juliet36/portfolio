@@ -1,11 +1,10 @@
-import About from './About'
-import Projects from './Projects'
-import Experience from './Experience'
-import Contact from './Contact'
-import Main from './Main'
+import About from '../pages/About'
+import Projects from '../pages/Projects'
+import Experience from '../pages/Experience'
+import Contact from '../pages/Contact'
+import Main from '../components/Main'
 
 function Content(props) {
-  console.log('props')
   switch(props.type) {
     case 'home':
       return <Main handleMenuClick={props.handleMenuClick} showMenu={props.showMenu}><About transition={props.transition} show={props.show} color={props.color} name={props.name} /></Main>

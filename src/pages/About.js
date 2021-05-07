@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import './Content.css'
 import './About.css'
-import { ReactComponent as Dog } from './images/me+dog.svg'
-import PageTitle from './PageTitle'
-import ButtonsContainer from './ButtonsContainer'
-import ButtonLink from './ButtonLink'
-import { HOBBIES, EMOTIONS } from './hobbies'
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import { PieChart } from 'react-minimal-pie-chart'
-import Label from './Label'
+import { ReactComponent as Dog } from '../images/me+dog.svg'
+import { HOBBIES, EMOTIONS } from '../constants/hobbies'
+import PageTitle from '../components/PageTitle'
+import ButtonsContainer from '../components/ButtonsContainer'
+import ButtonLink from '../components/ButtonLink'
+import Label from '../components/Label'
 
 function randomGenerator() {
   let prep = " A"
@@ -90,19 +90,7 @@ function About(props) {
       }
     }
   }
-  // useEffect(() => {
-  //   const proxyurl = "https://mysterious-eyrie-54160.herokuapp.com/"
-  //   fetch(proxyurl+`https://us-central1-jks-portfolio.cloudfunctions.net/addResult?type=${answer}`)
-  //     .then(res => res.json())
-  //     .then(
-  //       (result) => {
-  //         setCount(result.count)
-  //       },
-  //       (error) => {
-  //         setCount(count)
-  //       }
-  //     )
-  // })
+
   return (
         <div style={{backgroundColor: props.color}} className={"content-container content-container--home"}>
         <motion.div initial={{ opacity: 0 }}

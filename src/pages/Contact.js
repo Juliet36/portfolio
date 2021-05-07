@@ -1,18 +1,16 @@
-import { motion } from 'framer-motion'
 import './Content.css'
-import axios from "axios"
-import { useState } from "react"
-import PageTitle from './PageTitle'
-import ButtonLink from './ButtonLink'
-import ButtonsContainer from './ButtonsContainer'
-import { ReactComponent as Maya } from './images/me+maya.svg'
 import './Contact.css'
+import { useState } from "react"
+import { motion } from 'framer-motion'
+import { ReactComponent as Maya } from '../images/me+maya.svg'
+import PageTitle from '../components/PageTitle'
+import ButtonLink from '../components/ButtonLink'
+import ButtonsContainer from '../components/ButtonsContainer'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 10},
   visible: { opacity: 1, y: 0, transition: { delay: 1, duration:.4}}
 }
-
 
 function Contact(props) {
   const [status, setStatus] = useState("Send Message");
