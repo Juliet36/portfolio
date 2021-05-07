@@ -1,38 +1,167 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* {
+	box-sizing: border-box;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  align-items: flex-start;
+	position: relative;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+	z-index: 3;
+}
+main {
+	position: relative;
+	z-index: 2; /*TODO: make to 2 before transition*/
+}
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Hind+Vadodara:wght@300;400;500;600;700&display=swap');
+h2 {
+	font-family: 'Hind Vadodara', sans-serif;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 60px;
+
+	color: #000000;
+}
+b {
+	font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	overflow:hidden;
+}
+li {
+	height: 100vh;
+	background-color: pink;
+	/* width: 80px; */
+}
+li.empty {
+	/* flex: 1; */
+	background-color: transparent;
+	/* width:0; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main .content-container {
+	width: calc(100% - 240px);
+}
+.hamburger {
+	display: none;
+}
+.hamburger rect {
+	transition: y .2s ease .1s, transform .2s ease;
+	transform-origin: center center;
+}
+.hamburger.animate-cross .dark
+ {
+	transform: rotateZ(45deg);
+}
+.hamburger.animate-cross .gray
+ {
+	transform: rotateZ(-45deg);
+}
+.hamburger.animate-cross rect {
+	y: 6;
+}
+@media only screen and (max-width: 700px) {
+	.hamburger {
+		display: block;
+	  position: absolute;
+	  top: 20px;
+	  right: 20px;
+	  width: 35px;
+	  z-index: 2000;
+	}
+ ul {
+	 display: none;
+ }
+ ul.menu-show {
+	 display: flex;
+ }
+ li {
+	 opacity: 0 !important;
+	 width: 25% !important;
+	 transition: opacity .5s ease !important;
+ }
+ ul.menu-show li {
+	 opacity: 1 !important;
+ }
+ li.current {
+	 opacity: 1 !important;
+ }
+ .link.hide {
+	 opacity: 1 !important;
+	 visibility: visible !important;
+ }
+ main .content-container {
+ 	width: 100%;
+ }
+ h2 {
+	 font-size: 24px;
+	line-height: 36px;
+ }
 }

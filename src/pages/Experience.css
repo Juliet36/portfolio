@@ -1,0 +1,14 @@
+@media only screen and (max-width: 1550px) and (max-height: 1170px) {
+  .content-container--about-me .body-paragraph {
+    width: calc(100% - 500px);
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .content-container--about-me .body-paragraph {
+    width: 90%;
+  }
+ .svg--cat-container--outer {
+   position: relative;
+   margin: auto;
+ }
+}

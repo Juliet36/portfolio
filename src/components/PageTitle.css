@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Peace Sans';
+  src: url('fonts/PeaceSans.woff') format('woff'),
+  url('fonts/PeaceSans.woff2') format('woff2'),
+  url('fonts/PeaceSans.ttf') format('ttf'),
+  url('fonts/PeaceSans.otf') format('otf');
+}
+
+h1 {
+  font-family: 'Peace Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100px;
+  line-height: 139px;
+  color: #000000;
+  text-transform: uppercase;
+}
+.shadow {
+  opacity: .2;
+  position: absolute;
+  top: 70px; left: 90px;
+}
+.optional-br {
+  display: none;
+}
+@media only screen and (max-width: 1200px) {
+  h1 {
+    font-size: 70px;
+    line-height: 97px;
+  }
+}
+@media only screen and (max-width: 911px) {
+  .optional-br {
+    display:block;
+  }
+}
+@media only screen and (max-width: 700px) {
+ h1 {
+   font-size: 40px;
+   line-height: 56px;
+ }
+ .shadow {
+   top: 45px; left: 25px;
+ }
+}

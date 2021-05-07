@@ -1,0 +1,66 @@
+li {
+	height: 100vh;
+  width:100%;
+  transition: width .5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.link.show {
+  opacity: 1;
+}
+.link.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease 0s, visibility .2s ease 0s;
+}
+li.animate.animate--left {
+  justify-content: flex-start;
+}
+li.animate.animate--right {
+  justify-content: flex-end;
+}
+.link {
+  width: 80px;
+}
+li.show {
+  width: 80px;
+  z-index: 3;
+}
+li.current {
+  width: calc(100% - 240px);
+  opacity: 0;
+  z-index: -1;
+}
+.link {
+	width: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 100vh;
+  transform: rotate(90deg);
+  /* Safari */
+  -webkit-transform: rotate(90deg);
+  /* Firefox */
+  -moz-transform: rotate(90deg);
+  /* IE */
+  -ms-transform: rotate(90deg);
+  /* Opera */
+  -o-transform: rotate(90deg);
+	/* text-align: center; */
+}
+.link:hover .highlight {
+	background-color: white;
+	height: 20px;
+}
+.link a {
+	text-decoration: none;
+	font-family: 'Hind Vadodara', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #000000;
+	min-width: 100%;
+	text-align: center;
+}

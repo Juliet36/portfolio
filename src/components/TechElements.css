@@ -1,0 +1,39 @@
+.tech-element {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 20px;
+}
+.tech-element__icon {
+  width: 30px;
+}
+.tech-element__name {
+  font-family: 'Hind Madurai', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  margin-left: 8px;
+}
+.tech-element__divider {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .tech-element {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .tech-element {
+    margin-bottom: 10px;
+    margin-right: 5px;
+  }
+  .tech-element__icon {
+    display: none;
+  }
+  .tech-element__divider {
+    display: block;
+    margin-left: 10px;
+  }
+}

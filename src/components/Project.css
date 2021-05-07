@@ -1,0 +1,127 @@
+.project {
+  position: relative;
+  width: calc(50% - 15px);
+  height: 330px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.project-name {
+  font-family: 'Hind Madurai', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+}
+.project-image-container {
+  position: relative;
+  width: auto;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  transition: transform .5s ease;
+}
+.project:hover .project-image-container {
+  transform: scale(1.05);
+}
+.project-image {
+  position: relative;
+}
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.project:hover .project-overlay {
+  opacity: 1;
+}
+.techs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.tech-box {
+  background-color: rgba(255, 186, 8, .7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0px 2.5px 0px 2.5px;
+}
+.tech-box__label {
+  font-family: 'Hind Madurai', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.buttons--mobile {
+  display: none;
+}
+.project-info--mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .project-info--mobile {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .buttons--mobile {
+    display: flex;
+    margin-bottom: 40px;
+  }
+  .buttons--desktop {
+    display: none;
+  }
+  .project {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .project-name {
+    font-size: 20px;
+  }
+  .project-overlay {
+    display: none;
+  }
+  .project-info--mobile .body-paragraph {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: black;
+  }
+  .techs {
+    justify-content: center;
+  }
+  .tech-box {
+    background-color: black;
+  }
+  .tech-box__label {
+    color: rgba(255, 186, 8, 1);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .project {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+}

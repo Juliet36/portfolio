@@ -1,0 +1,37 @@
+.tech-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.tech-section__name {
+  font-family: 'Hind Madurai', sans-serif;
+  font-weight: 600;
+  min-width:100px;
+}
+.tech-section__elements {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 1000px) {
+  .tech-section__elements {
+    flex-wrap: wrap;
+  }
+  .tech-section {
+    align-items: flex-start;
+  }
+  .tech-section__name {
+    line-height: 30px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .tech-section {
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .tech-section__name {
+    line-height: unset;
+  }
+}

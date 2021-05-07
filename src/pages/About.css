@@ -1,0 +1,75 @@
+.top-bottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.pie-chart {
+  margin-right: 15px;
+  width: 250px;
+}
+.pie-chart text {
+  fill: white;
+}
+.side-by-side--start {
+  justify-content: flex-start;
+}
+.side-by-side--top {
+  align-items: flex-start !important;
+}
+.dog--p {
+  width: 50%;
+}
+.right-side {
+  transition: opacity .5s ease;
+  margin-top: 50px;
+}
+.reveal {
+  opacity: 1;
+}
+.invisible {
+  opacity: 0;
+}
+.body-paragraph--larger {
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 0px;
+}
+.Yes {
+  color: #FFBA08;
+}
+.No {
+  color: rgb(63, 136, 197);
+}
+
+@media only screen and (max-width: 1000px) {
+  .side-by-side.mobile-flex-start {
+    flex-direction: column;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+  .pie-chart {
+    width: 80%;
+  }
+  .right-side {
+    margin-top: 40px;
+  }
+  .right-side.invisible {
+    display: none;
+  }
+  .right-side.reveal {
+    display: block;
+  }
+  .dog--p {
+    order: 1;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .svg--dog {
+    order: 2;
+    width: 100%;
+  }
+  .align-start-mobile .top-bottom {
+    align-self: flex-start;
+  }
+}
