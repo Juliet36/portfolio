@@ -1,109 +1,87 @@
-/* .button-container {
-  max-width: 210px;
-  min-width: 110px;
-  height: 62px;
-  position: relative;
-}
-.button-container:hover .button-link__main {
-  transform: translateX(-10px) translateY(10px);
-}
-.button-link__main {
-  background-color: black;
-  padding: 15px;
-  max-width: 200px;
-  min-width: 100px;
-  position: relative;
-  z-index: 1;
-  position: absolute;
-  top: 0; right: 0;
-  transition: transform .3s ease-out;
-}
-.button-link--shadow {
-  background-color: rgba(0,0,0,0.2);
-  padding: 15px;
-  max-width: 200px;
-  min-width: 100px;
-  height: 52px;
-  position: absolute;
-  z-index: 1;
-  bottom: 0; left: 0;
-} */
-
-
 .button-link {
-  text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
 }
+
 .button-link--plain {
   width: 100%;
 }
-.button-link__main--original {
+
+.button-link__main--shadow {
   background-color: black;
-  padding: 15px;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 10px;
+  margin-left: 10px;
   max-width: 200px;
   min-width: 100px;
+  padding: 15px;
   position: relative;
-  margin-left: 10px;
-  z-index: 1;
-  margin-bottom: 10px;
-  bottom: 0; left: 0;
   transition: left .25s ease-out, bottom .25s ease-out;
+  z-index: 1;
 }
-.button-link__main--original:hover {
+
+.button-link__main--shadow::before {
+  background-color: rgba(0,0,0,.2);
+  content: '';
+  height: 100%;
   left: -10px;
-  bottom: -10px;
-}
-.button-link__main--original:hover::before {
-  top: 0px;
-  left: 0px;
-}
-.button-link__main--plain {
-  margin: auto;
-  background-color: white;
-  padding: 10px;
-  max-width: 350px;
+  position: absolute;
+  top: 10px;
+  transition: left .25s ease-out, top .25s ease-out;
   width: 100%;
-  border-radius: 6px;
-  transition: background-color .3s ease-out;
+  z-index: -1;
 }
+
+.button-link__main--shadow:hover {
+  bottom: -10px;
+  left: -10px;
+}
+
+.button-link__main--shadow:hover::before {
+  left: 0px;
+  top: 0px;
+}
+
+.button-link__main--plain {
+  background-color: white;
+  border-radius: 6px;
+  margin: auto;
+  max-width: 350px;
+  padding: 10px;
+  transition: background-color .3s ease-out;
+  width: 100%;
+}
+
 .button-link__main--plain:hover {
   background-color: rgba(255,255,255,.4);
 }
+
 .button-link--partial {
   width: 45%;
 }
-.button-link__main--original::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 10px;
-  left: -10px;
-  background-color: rgba(0,0,0,.2);
-  z-index: -1;
-  transition: left .25s ease-out, top .25s ease-out;
-}
-.main__label {
-  font-family: 'Hind Madurai', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
+
+.button__label {
   color: white;
+  font-family: 'Hind Madurai', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
   text-align: center;
 }
-.button-link__main--plain .main__label {
+
+.button-link__main--plain .button__label {
   color: black;
 }
 
 @media only screen and (max-width: 700px) {
-  
   .button-link__main--plain {
-    margin: auto;
     background-color: black;
-    margin-bottom: 5px;
-    width: 100%;
+    margin: auto;
+    margin-bottom: auto auto 5px auto;
   }
-  .button-link__main--plain .main__label {
+  
+  .button-link__main--plain .button__label {
     color: white;
   }
 }

@@ -1,4 +1,4 @@
-import './Content.css'
+import '../navigation/Content.css'
 import './Experience.css'
 import { motion } from 'framer-motion'
 import { ReactComponent as CatText } from '../images/cat-text.svg'

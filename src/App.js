@@ -5,7 +5,7 @@ import {
   useLocation
 } from 'react-router-dom'
 import { AnimatePresence } from "framer-motion"
-import { ReactComponent as Hamburger } from '../images/hamburger.svg'
+import { ReactComponent as Hamburger } from './images/hamburger.svg'
 import { WEB_PAGES } from './constants/pages'
 import Navigation from './navigation/Navigation'
 import Routes from './navigation/Routes'

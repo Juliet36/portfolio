@@ -1,4 +1,4 @@
-import './Content.css'
+import '../navigation/Content.css'
 import './Contact.css'
 import { useState } from "react"
 import { motion } from 'framer-motion'

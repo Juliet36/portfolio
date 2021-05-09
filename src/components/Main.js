@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import './Main.css'
 
 export default function Main(props) {
   return (

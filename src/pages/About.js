@@ -1,4 +1,4 @@
-import './Content.css'
+import '../navigation/Content.css'
 import './About.css'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'

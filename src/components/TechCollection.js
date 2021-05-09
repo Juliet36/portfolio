@@ -1,4 +1,3 @@
-import './TechCollection.css'
 import { TECHS } from '../constants/technologies.js'
 import TechSection from './TechSection.js'
 

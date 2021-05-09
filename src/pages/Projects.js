@@ -1,4 +1,4 @@
-import './Content.css'
+import '../navigation/Content.css'
 import { motion } from 'framer-motion'
 import { PROJECTS } from '../constants/projects.js'
 import ProjectSection from '../components/ProjectSection.js'

@@ -115,6 +115,8 @@ export const HOBBIES = [
 ]
 
 export const EMOTIONS = [
+  "Ambivalent",
+  "Brave",
   "Pleasant",
   "Retired",
   "Practicing",
