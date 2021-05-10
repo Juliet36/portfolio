@@ -1,7 +1,16 @@
 .buttons-container {
   align-items: center;
   display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.buttons-container--start {
   justify-content: flex-start;
+}
+
+.buttons-container .button-link {
+  width: auto;
 }
 
 .buttons-container .button-link:nth-child(1) {

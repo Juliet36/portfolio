@@ -43,14 +43,6 @@
   position: absolute;
 }
 
-.svg--dog {
-  align-self: flex-start;
-  margin-right: 20px;
-  margin-top: 50px;
-  max-width: 700px;
-  width: 45%;
-}
-
 .content-container--projects {
   left: 80px;
 }
@@ -69,10 +61,6 @@ path {
   animation-delay: 2.5s;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-}
-
-.svg--dog path {
-  animation-delay: 5s;
 }
 
 @keyframes dash {
@@ -147,10 +135,5 @@ path {
  
  .svg--cat--container {
    height: 300px;
- }
- 
- .svg--dog {
-   margin-top: 50px;
-   width: 100%;
  }
 }

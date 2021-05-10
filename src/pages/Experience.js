@@ -1,16 +1,11 @@
-import '../navigation/Content.css'
 import './Experience.css'
 import { motion } from 'framer-motion'
+import { fadeUp } from '../constants/animations'
 import { ReactComponent as CatText } from '../images/cat-text.svg'
 import cat from '../images/me+cat.png'
 import PageTitle from '../components/PageTitle'
 import ButtonLink from '../components/ButtonLink'
 import TechCollection from '../components/TechCollection'
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 10},
-  visible: { opacity: 1, y: 0, transition: { delay: 1, duration:.4}}
-}
 
 function Experience(props) {
   return (
@@ -29,7 +24,7 @@ function Experience(props) {
         <motion.p initial="hidden" animate="visible" variants={fadeUp} className="body-paragraph">I went to <b>Sarah Lawrence College</b> (class of 2017) to study psychology and almost immediately found and pivoted to <b>Computer Science</b>. I worked my way through their entire CS catalog and worked as a <b>lab assistant</b> and <b>tutor</b> to share my love of coding with other students.</motion.p>
         <motion.p initial="hidden" animate="visible" variants={fadeUp} className="body-paragraph">I was born and raised in <b>Minnesota</b> and have now covered the coasts by going to school in <b>New York</b> and living the last four years in <b>San Francisco</b>. Besides coding I rock climb, play tennis, pat my dog, and draw.</motion.p>
         <motion.div initial="hidden" animate="visible" variants={fadeUp} >
-        <ButtonLink text="Send me an email!" link="mailto:juliet.slade@gmail.com" />
+        <ButtonLink text="Send me an email!" link="mailto:juliet.slade@gmail.com" hasShadow={true} />
         </motion.div>
         <div style={{marginBottom: '100px'}}></div>
         <div className="svg--cat-container--outer">

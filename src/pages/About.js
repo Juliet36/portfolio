@@ -1,7 +1,7 @@
-import '../navigation/Content.css'
 import './About.css'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { sentence, letter } from '../constants/animations'
 import { PieChart } from 'react-minimal-pie-chart'
 import { ReactComponent as Dog } from '../images/me+dog.svg'
 import { HOBBIES, EMOTIONS } from '../constants/hobbies'
@@ -22,6 +22,7 @@ function randomGenerator() {
 }
 
 function About(props) {
+  const { color } = {...props}
   const [description, setDescription] = useState("")
   const [total, setTotal] = useState(0)
   const [yes, setYes] = useState(0)
@@ -40,9 +41,7 @@ function About(props) {
           setNo(result.no)
         },
         (error) => {
-          setTotal(total)
-          setYes(yes)
-          setNo(no)
+          console.log("Error with getting answer counts:", error)
         }
       )
   }, [])
@@ -50,7 +49,6 @@ function About(props) {
   function answerQuestion(answer) {
     setAnswer(answer)
     answer = answer.toLowerCase()
-    console.log(answer)
     const proxyurl = "https://mysterious-eyrie-54160.herokuapp.com/"
     fetch(proxyurl+`https://us-central1-jks-portfolio.cloudfunctions.net/addResult?type=${answer}`)
       .then(res => res.json())
@@ -64,35 +62,13 @@ function About(props) {
           }
         },
         (error) => {
-          setTotal(total)
+          console.log("Error with updating answer counts:", error)
         }
       )
   }
-  
-  const sentence = {
-    hidden: {opacity: 1},
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 1,
-        staggerChildren: 1
-      }
-    }
-  }
-  const letter = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 2,
-        duration: 2
-      }
-    }
-  }
 
   return (
-        <div style={{backgroundColor: props.color}} className={"content-container content-container--home"}>
+      <div style={{backgroundColor: color}} className={"content-container content-container--home"}>
         <motion.div initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -125,8 +101,8 @@ function About(props) {
                   {
                     !answer &&
                     <ButtonsContainer>
-                      <ButtonLink text="Yes" link="#" handleClick={answerQuestion} />
-                      <ButtonLink text="No" link="#" handleClick={answerQuestion} />
+                      <ButtonLink text="Yes" link="#" hasShadow={true} handleClick={answerQuestion} />
+                      <ButtonLink text="No" link="#" hasShadow={true} handleClick={answerQuestion} />
                     </ButtonsContainer>
                   }
                   <p className={"body-paragraph body-paragraph--larger" + (answer ? " reveal " : " invisible ") + answer}>
@@ -134,7 +110,7 @@ function About(props) {
                     {answer === "Yes" ? "Nice!" : "Ah, bummer"}
                   </p>
                 </div>
-                <div className={"right-side" + (answer ? " reveal" : " invisible")}>
+                <div className={"results-container" + (answer ? " reveal" : " invisible")}>
                   <p className="body-paragraph"><b>Times I've Gotten It Right So Far...</b></p>
                   <div className="side-by-side align-start-mobile" style={{marginTop: 0}}>
                     <PieChart className="pie-chart"

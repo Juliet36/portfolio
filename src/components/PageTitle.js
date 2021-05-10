@@ -6,35 +6,23 @@ const text = {
   visible: { x: 0, y: 0, transition: { delay: .6, duration:.5}}
 }
 export default function PageTitle(props) {
+  let { text } = {...props}
+  let title = text
+  if (text.split(' ').lenght > 1) {
+    title = (<>text.split(' ')[0] <br className="optional-br"/>text.split(' ')[1]</>)
+  }
   return (
     <>
-      {
-        props.text.split(' ').length > 1 ?
-          <h1>
-          {props.text.split(' ')[0]} <br className="optional-br"/>{props.text.split(' ')[1]}
-          </h1>
-          :
-          <h1
-          >
-          {props.text}
-          </h1>
-      }
-      {
-        props.text.split(' ').length > 1 ?
-          <motion.h1
-            variants={text}
-            initial="hidden"
-            animate="visible"
-          className="shadow">
-          {props.text.split(' ')[0]} <br className="optional-br"/>{props.text.split(' ')[1]}
-          </motion.h1>
-          :
-          <motion.h1 
-            variants={text}
-            initial="hidden"
-            animate="visible"
-          className="shadow">{props.text}</motion.h1>
-      }
+      <h1>
+      {title}
+      </h1>
+      <motion.h1
+        variants={text}
+        initial="hidden"
+        animate="visible"
+        className="shadow">
+        {title}
+      </motion.h1>
     </>
   )
 }

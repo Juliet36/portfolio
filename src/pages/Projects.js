@@ -1,18 +1,15 @@
-import '../navigation/Content.css'
 import { motion } from 'framer-motion'
+import { fadeUp } from '../constants/animations'
 import { PROJECTS } from '../constants/projects.js'
 import ProjectSection from '../components/ProjectSection.js'
 import PageTitle from '../components/PageTitle'
 
 const SECTION_NAMES = Object.keys(PROJECTS)
-const fadeUp = {
-  hidden: { opacity: 0, y: 10},
-  visible: { opacity: 1, y: 0, transition: { delay: 1, duration:.4}}
-}
 
 function Projects(props) {
+  const { color } = {...props}
   return (
-      <div style={{backgroundColor: props.color}}  className={"content-container content-container--projects"}>
+      <div style={{backgroundColor: color}}  className={"content-container content-container--projects"}>
       <motion.div initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}

@@ -6,9 +6,8 @@ import { motion } from 'framer-motion'
 import Content from './Content'
 
 function Navigation(props) {
-  console.log(props)
   return (
-        <motion.li 
+      <motion.li 
         style={{order: props.position, backgroundColor: props.info.color}}
         className={
           (props.current === props.position ? "current" : "show")

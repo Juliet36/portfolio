@@ -1,9 +1,6 @@
 .button-link {
   cursor: pointer;
   text-decoration: none;
-}
-
-.button-link--plain {
   width: 100%;
 }
 
@@ -55,10 +52,6 @@
 
 .button-link__main--plain:hover {
   background-color: rgba(255,255,255,.4);
-}
-
-.button-link--partial {
-  width: 45%;
 }
 
 .button__label {

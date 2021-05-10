@@ -1,18 +1,14 @@
-import '../navigation/Content.css'
 import './Contact.css'
 import { useState } from "react"
 import { motion } from 'framer-motion'
+import { fadeUp } from '../constants/animations'
 import { ReactComponent as Maya } from '../images/me+maya.svg'
 import PageTitle from '../components/PageTitle'
 import ButtonLink from '../components/ButtonLink'
 import ButtonsContainer from '../components/ButtonsContainer'
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 10},
-  visible: { opacity: 1, y: 0, transition: { delay: 1, duration:.4}}
-}
-
 function Contact(props) {
+  const { color } = {...props}
   const [status, setStatus] = useState("Send Message");
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,15 +19,16 @@ function Contact(props) {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result)
           setStatus("Sent")
         },
         (error) => {
+          console.log("Error with sending email:", error)
         }
       )
     }
+    
   return (
-      <div style={{backgroundColor: props.color}}  className={"content-container content-container--contact"}>
+      <div style={{backgroundColor: color}}  className={"content-container content-container--contact"}>
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -42,10 +39,10 @@ function Contact(props) {
           <motion.p initial="hidden" animate="visible" variants={fadeUp} className="subheader">Please reach out if you have any <b>questions, comments, or requests</b>&mdash;I'd love to chat!</motion.p>
           <motion.p initial="hidden" animate="visible" variants={fadeUp} className="body-paragraph" style={{marginBottom: '5px'}}>You can also find me online in these places:</motion.p>
           <motion.div initial="hidden" animate="visible" variants={fadeUp}>
-          <ButtonsContainer>
-            <ButtonLink text="Github" link="https://github.com/Juliet36" />
-            <ButtonLink text="LinkedIn" link="https://www.linkedin.com/in/juliet-slade/" />
-          </ButtonsContainer>
+            <ButtonsContainer alignStart={true}>
+              <ButtonLink text="Github" link="https://github.com/Juliet36" hasShadow={true} />
+              <ButtonLink text="LinkedIn" link="https://www.linkedin.com/in/juliet-slade/" hasShadow={true} />
+            </ButtonsContainer>
           </motion.div>
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="side-by-side">
             <form onSubmit={handleSubmit}>
@@ -58,9 +55,9 @@ function Contact(props) {
               <div className="large-field-container">
                 <textarea className="large-field" id="message" placeholder="Message" required />
               </div>
-              <button className="submit-button" type="submit">{status}</button>
+              <button className="button-link__main button-link__main--shadow button-link__form" type="submit"><p className="button__label">{status}</p></button>
             </form>
-            <Maya className="svg-maya" />
+            <Maya className="svg--maya" />
           </motion.div>
         </motion.div>
       </div>
